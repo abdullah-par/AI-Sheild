@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Lock, Eye, AlertTriangle, CheckCircle, Mail, User } from 'lucide-react';
+import { Shield, Lock, Eye, AlertTriangle, CheckCircle, Mail, User, Link, FileImage, Brain, Zap, Globe, Filter } from 'lucide-react';
 
 export default function AIShieldWebsite() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -19,6 +19,12 @@ export default function AIShieldWebsite() {
               className={`hover:text-cyan-400 transition ${currentPage === 'home' ? 'text-cyan-400' : ''}`}
             >
               Home
+            </button>
+            <button
+              onClick={() => setCurrentPage('features')}
+              className={`hover:text-cyan-400 transition ${currentPage === 'features' ? 'text-cyan-400' : ''}`}
+            >
+              Features
             </button>
             <button
               onClick={() => setCurrentPage('about')}
@@ -78,6 +84,243 @@ export default function AIShieldWebsite() {
             className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition transform hover:scale-105"
           >
             Get Started Now
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const FeaturesPage = () => (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      <div className="container mx-auto px-6 py-20">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold text-white mb-6">
+            Powerful <span className="text-cyan-400">Security Features</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Explore our comprehensive suite of AI-powered security tools designed to protect you from modern cyber threats
+          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto space-y-16">
+          {/* Phishing Detection Section */}
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-10 border border-white/20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <div className="bg-red-500/20 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+                  <AlertTriangle className="w-10 h-10 text-red-400" />
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-4">Phishing Detection</h2>
+                <p className="text-gray-300 text-lg mb-6">
+                  Our advanced AI system analyzes multiple indicators to identify phishing attempts with exceptional accuracy, protecting you from credential theft and data breaches.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <Link className="w-6 h-6 text-cyan-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">URL Analysis</h4>
+                      <p className="text-gray-400 text-sm">Deep inspection of domain names, subdomains, and URL structures to detect spoofing attempts. Checks for typosquatting, homograph attacks, and suspicious TLDs.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Mail className="w-6 h-6 text-cyan-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Email Header Analysis</h4>
+                      <p className="text-gray-400 text-sm">Examination of sender authentication protocols including SPF, DKIM, and DMARC records to verify email legitimacy.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Brain className="w-6 h-6 text-cyan-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Content Pattern Recognition</h4>
+                      <p className="text-gray-400 text-sm">Natural language processing to identify social engineering tactics, urgency manipulation, and suspicious language patterns.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Globe className="w-6 h-6 text-cyan-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Brand Impersonation Detection</h4>
+                      <p className="text-gray-400 text-sm">Visual similarity analysis using computer vision to catch fake login pages and spoofed websites mimicking legitimate brands.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-2xl p-8 border border-red-500/20">
+                <h3 className="text-white font-bold text-xl mb-6">Performance Metrics</h3>
+                <div className="space-y-4">
+                  <div className="bg-slate-800/50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-gray-300 text-sm">Detection Accuracy</span>
+                      <span className="text-green-400 font-bold">98.7%</span>
+                    </div>
+                    <div className="w-full bg-slate-700 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style={{width: '98.7%'}}></div>
+                    </div>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-gray-300 text-sm">Response Time</span>
+                      <span className="text-cyan-400 font-bold">&lt; 100ms</span>
+                    </div>
+                    <div className="w-full bg-slate-700 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style={{width: '95%'}}></div>
+                    </div>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-gray-300 text-sm">False Positive Rate</span>
+                      <span className="text-purple-400 font-bold">0.3%</span>
+                    </div>
+                    <div className="w-full bg-slate-700 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full" style={{width: '5%'}}></div>
+                    </div>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-gray-300 text-sm">Threats Blocked Daily</span>
+                      <span className="text-yellow-400 font-bold">10,000+</span>
+                    </div>
+                    <div className="w-full bg-slate-700 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-yellow-500 to-orange-500 h-2 rounded-full" style={{width: '100%'}}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Steganography Detection Section */}
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-10 border border-white/20">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div className="order-2 md:order-1">
+                <div className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-2xl p-8 border border-purple-500/20">
+                  <h3 className="text-white font-bold text-xl mb-4">Supported Techniques</h3>
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                      <p className="text-gray-300 text-sm font-semibold">LSB Encoding</p>
+                    </div>
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                      <p className="text-gray-300 text-sm font-semibold">DCT-Based</p>
+                    </div>
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                      <p className="text-gray-300 text-sm font-semibold">Spread Spectrum</p>
+                    </div>
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                      <p className="text-gray-300 text-sm font-semibold">Palette Mod</p>
+                    </div>
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                      <p className="text-gray-300 text-sm font-semibold">DWT Methods</p>
+                    </div>
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                      <p className="text-gray-300 text-sm font-semibold">Pixel Manip</p>
+                    </div>
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-3">Supported Formats</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm">PNG</span>
+                    <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm">JPEG</span>
+                    <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm">BMP</span>
+                    <span className="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-full text-sm">TIFF</span>
+                    <span className="bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-sm">GIF</span>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="bg-purple-500/20 w-20 h-20 rounded-full flex items-center justify-center mb-6">
+                  <Eye className="w-10 h-10 text-purple-400" />
+                </div>
+                <h2 className="text-4xl font-bold text-white mb-4">Steganography Detection</h2>
+                <p className="text-gray-300 text-lg mb-6">
+                  Uncover hidden data concealed within digital images using state-of-the-art deep learning models trained on diverse steganographic techniques.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <Filter className="w-6 h-6 text-purple-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Statistical Analysis</h4>
+                      <p className="text-gray-400 text-sm">Detection of anomalies in pixel distributions, color histograms, and chi-square analysis to identify unnatural patterns.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Brain className="w-6 h-6 text-purple-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Deep Learning Models</h4>
+                      <p className="text-gray-400 text-sm">CNN-based classifiers trained on millions of stego and clean images to identify subtle modifications invisible to the human eye.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <FileImage className="w-6 h-6 text-purple-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Multi-Format Support</h4>
+                      <p className="text-gray-400 text-sm">Comprehensive analysis of PNG, JPEG, BMP, TIFF, and GIF formats with format-specific detection algorithms.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Zap className="w-6 h-6 text-purple-400 mr-3 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-white font-semibold mb-1">Payload Estimation</h4>
+                      <p className="text-gray-400 text-sm">Quantification of hidden data volume when steganography is detected, providing insights into threat severity.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* How It Works Section */}
+          <div className="bg-gradient-to-r from-cyan-500/10 to-blue-600/10 backdrop-blur-lg rounded-3xl p-10 border border-cyan-400/30">
+            <h2 className="text-3xl font-bold text-white mb-8 text-center">How AI-Shield Works</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="bg-cyan-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-cyan-400">1</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Submit Content</h3>
+                <p className="text-gray-300">Upload URLs, emails, or images through our secure interface for instant analysis.</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-blue-400">2</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">AI Analysis</h3>
+                <p className="text-gray-300">Multiple AI models process your content simultaneously using advanced machine learning algorithms.</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-purple-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-400">3</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Get Results</h3>
+                <p className="text-gray-300">Receive detailed threat assessment with confidence scores and actionable recommendations.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Features Grid */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <Zap className="w-10 h-10 text-yellow-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Lightning Fast</h3>
+              <p className="text-gray-300">Real-time threat detection with response times under 100 milliseconds for instant protection.</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <Shield className="w-10 h-10 text-green-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Enterprise Ready</h3>
+              <p className="text-gray-300">Scalable infrastructure capable of handling millions of requests with 99.9% uptime guarantee.</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20">
+              <Brain className="w-10 h-10 text-blue-400 mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Continuous Learning</h3>
+              <p className="text-gray-300">Models automatically adapt to new threat patterns, staying ahead of evolving cyber attacks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <button
+            onClick={() => setCurrentPage('auth')}
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-10 py-4 rounded-lg text-lg font-semibold transition transform hover:scale-105"
+          >
+            Try AI-Shield Now
           </button>
         </div>
       </div>
@@ -240,6 +483,7 @@ export default function AIShieldWebsite() {
     <div className="min-h-screen">
       <Navbar />
       {currentPage === 'home' && <HomePage />}
+      {currentPage === 'features' && <FeaturesPage />}
       {currentPage === 'about' && <AboutPage />}
       {currentPage === 'auth' && <AuthPage />}
     </div>
